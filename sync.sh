@@ -16,4 +16,5 @@ rsync -rvhP \
     --exclude='*.bmark' \
     --exclude='.Trash*' \
     --exclude='.yt-dlp-archive' \
+    --exclude='.gitkeep' \
     "$SOURCE/" "$IPOD/"
