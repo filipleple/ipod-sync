@@ -1,4 +1,11 @@
 content-sync/audio/podcasts/*
+!content-sync/audio/podcasts/.gitkeep
+
 content-sync/audio/books/*
+!content-sync/audio/books/.gitkeep
+
 content-sync/audio/noise/*
+!content-sync/audio/noise/.gitkeep
+
 content-sync/audio/music/*
+!content-sync/audio/music/.gitkeep
