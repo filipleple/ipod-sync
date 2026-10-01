@@ -1,0 +1,7 @@
+BASE="/home/user/ipod/content-sync/audio"
+IPOD="/run/media/user/IPOD"
+
+PODCAST_PLAYLIST_URL="https://www.youtube.com/playlist?list=XXXXXXXXXXXXX"
+BOOKS_PLAYLIST_URL="https://www.youtube.com/playlist?list=YYYYYYYYYYYYY"
+NOISE_PLAYLIST_URL="https://www.youtube.com/playlist?list=ZZZZZZZZZZZZZ"
+MUSIC_PLAYLIST_URL="https://www.youtube.com/playlist?list=VVVVVVVVVVVVV"

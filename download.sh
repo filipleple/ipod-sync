@@ -2,11 +2,8 @@
 
 set -euo pipefail
 
-BASE="/home/flewinski/workspace/offtop/ipod/content-sync/audio"
-
-PODCAST_PLAYLIST_URL="PUT_URL_HERE"
-MUSIC_PLAYLIST_URL="PUT_URL_HERE"
-BOOKS_PLAYLIST_URL="PUT_URL_HERE"
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+source "$SCRIPT_DIR/.ipod.conf"
 
 download_playlist() {
     local url="$1"
@@ -23,5 +20,6 @@ download_playlist() {
 }
 
 download_playlist "$PODCAST_PLAYLIST_URL" "$BASE/podcasts"
-download_playlist "$MUSIC_PLAYLIST_URL"   "$BASE/music"
 download_playlist "$BOOKS_PLAYLIST_URL"   "$BASE/books"
+download_playlist "$NOISE_PLAYLIST_URL"   "$BASE/noise"
+download_playlist "$MUSIC_PLAYLIST_URL"   "$BASE/music"

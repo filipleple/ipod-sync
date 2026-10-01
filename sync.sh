@@ -2,8 +2,8 @@
 
 set -euo pipefail
 
-IPOD="/run/media/flewinski/IPOD DI CIN"
-SOURCE="/home/flewinski/workspace/offtop/ipod/content-sync/audio"
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+source "$SCRIPT_DIR/.ipod.conf"
 
 if ! mountpoint -q "$IPOD"; then
     echo "ERROR: iPod not connected!" >&2
@@ -12,9 +12,10 @@ fi
 
 rsync -rvhP \
     --no-perms --no-owner --no-group \
+    --ignore-existing \
     --modify-window=1 \
     --exclude='*.bmark' \
     --exclude='.Trash*' \
     --exclude='.yt-dlp-archive' \
     --exclude='.gitkeep' \
-    "$SOURCE/" "$IPOD/"
+    "$BASE/" "$IPOD/"

@@ -9,3 +9,5 @@ content-sync/audio/noise/*
 
 content-sync/audio/music/*
 !content-sync/audio/music/.gitkeep
+
+.ipod.conf
