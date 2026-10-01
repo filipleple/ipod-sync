@@ -19,3 +19,5 @@ rsync -rvhP \
     --exclude='.yt-dlp-archive' \
     --exclude='.gitkeep' \
     "$BASE/" "$IPOD/"
+
+sync
