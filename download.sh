@@ -22,4 +22,4 @@ download_playlist() {
 download_playlist "$PODCAST_PLAYLIST_URL" "$BASE/podcasts"
 download_playlist "$BOOKS_PLAYLIST_URL"   "$BASE/books"
 download_playlist "$NOISE_PLAYLIST_URL"   "$BASE/noise"
-download_playlist "$MUSIC_PLAYLIST_URL"   "$BASE/music"
+download_playlist "$MUSIC_PLAYLIST_URL"   "$BASE/music/unsorted"
