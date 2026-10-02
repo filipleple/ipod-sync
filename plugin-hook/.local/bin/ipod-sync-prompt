@@ -1,0 +1,42 @@
+#!/usr/bin/bash
+
+set -u
+
+REPO="$HOME/workspace/offtop/ipod"
+
+source "$REPO/.ipod.conf"
+
+# Give GNOME/UDisks time to automount the iPod.
+for i in {1..20}; do
+    if mountpoint -q "$IPOD"; then
+        break
+    fi
+    sleep 1
+done
+
+if ! mountpoint -q "$IPOD"; then
+    notify-send \
+        "iPod detected" \
+        "The iPod was detected, but $IPOD was not mounted."
+
+    exit 1
+fi
+
+if zenity \
+    --question \
+    --title="iPod detected" \
+    --text="Do you want to download and sync your audio files?" \
+    --ok-label="Yes" \
+    --cancel-label="No"
+then
+    notify-send "iPod sync" "Downloading audio and syncing iPod..."
+
+    if "$REPO/download.sh" && "$REPO/sync.sh"; then
+        notify-send "iPod sync" "Download and sync complete."
+    else
+        notify-send \
+            --urgency=critical \
+            "iPod sync failed" \
+            "Check the systemd user journal for details."
+    fi
+fi

@@ -1,0 +1,7 @@
+[Unit]
+Description=Ask whether to download and sync iPod
+After=graphical-session.target
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/ipod-sync-prompt
